@@ -21,7 +21,7 @@ Use a dataset of historical lending activity from a peer-to-peer lending service
 ## Objective
   
   
-Using knowledge of Python and supervised machine learning to train and evaluate a model based on loan risk.
+Using knowledge of Python and supervised machine learning to train and evaluate the best model to use based on loan risk, where a healthy loan status is `0` and a high-risk loan status is `1`.
 
 
 
@@ -62,7 +62,7 @@ Please see the file `credit_risk_analysis_report.md` for full details regarding 
 
 **How well does the logistic regression model predict both the `0` (healthy loan) and `1` (high-risk loan) labels?** 
 
-According to the balanced accuracy score of 95%, the model is performing well; however, this is likely due to an imbalanced dataset. When analyzing the dataset, the number of healthy loans (low-risk) highly outweigh the number of high-risk loans. This indicates that the model is better at predicting a loan status as healthy in comparison to a loan status as high-risk. As the dataset is imbalanced, we need to further look at the resampled dataset. 
+According to the balanced accuracy score of 95%, the model is performing well; however, this is likely due to an imbalanced dataset. When analyzing the dataset, the number of healthy loans (low-risk) highly outweigh the number of high-risk loans. This indicates that the model is better at predicting a loan status as healthy in comparison to a loan status as high-risk. As the dataset is imbalanced, we need to further look at the oversampled dataset. 
 
 When analyzing both the balanced and imbalanced classification reports, the model is able to predict healthy loans `0` 100% of the time, with 99% of those recalled correctly. The model is only able to predict high-risk loans `1` with a precision of 85%, and of those 85% correctly identified there is a recall rate of 91%. 
 
@@ -87,9 +87,9 @@ Overall, precision and recall values are extremely improtant because the cost of
 
 **How well does the logistic regression model, fit with oversampled data, predict both the `0` (healthy loan) and `1` (high-risk loan) labels?**
 
-The oversampled model generated a balanced accuracy score of 99%, which is an improvement than the prior logistic regression model. It continues to perform the same when being able to correctly identify health loans, as the precision is 100%, and the recall remains high at 99%. Where the oversampled model performs better is with the recall rates for high-risk loans. Although still obtaining a similar precision as the logistic regression model at 84% in comparison to the 85%, of these 84% that are correctly identified, there is a recall of 99%. This is an improvement from the 91% on the logistic regression model. 
+Overall, in analyzing the results of the machine learning models, the oversampled model would be the model of choice. The oversampled model generated a balanced accuracy score of 99%, which is an improvement than the prior logistic regression model on original data of 95%. It continues to perform the same when being able to correctly identify health loans, as the precision is 100%, and the recall remains at 99%. More importantly, where the oversampled model performs better is with the recall rates for high-risk loans. Although still obtaining a similar precision as the logistic regression model on original data at 84% in comparison to 85%, of these 84% that are correctly identified at high-risk, there is a recall of 99%. This is an improvement from the 91% on the prior logistic regression model on original data. 
 
-The oversample model helps to better predict the true positives meaning that it is more effective at distinguishing high-risk loans with high recall accuracy.
+The oversampled model helps to better predict the true positives meaning that it is more effective at distinguishing high-risk loans with high recall accuracy. As well, as the number of false positives significantly decreases, the oversampled model is able to classify healthy and high-risk loans more correctly.
 
 
 
