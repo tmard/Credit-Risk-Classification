@@ -69,6 +69,7 @@ The most appropriate tool for the machine learning model is the Logistic Regress
       * Precision: 85%
       * Recall: 91%
 
+![orig_data_imbal_classification_report](Images/orig_data_imbal_classification_report.png)  
 
 
 
