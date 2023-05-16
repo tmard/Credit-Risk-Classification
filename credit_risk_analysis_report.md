@@ -14,7 +14,7 @@ Table of Contents
 ## Overview of the Analysis
 
 
-<u><b>Purpose of the analysis:</b></u> 
+**Purpose of the analysis:**
 
 The purpose of the analysis is to identify the creditworthiness of borrowers. It will help identify the risk associated with a borrower not paying back a loan causing a loss of money. In this analysis, supervised machine learning was implemented to train and evaluate models based on loan risk. The dataset that was used was historical lending activity from a peer-to-peer lending services company. 
 
@@ -28,7 +28,14 @@ The financial information that the data was on encompassed loan size, interest r
 
 **Provide information about the variables you were trying to predict (i.e., `value_counts`):** 
 
-When analyzing the `value_counts` after splitting the data into training and testing sets, we are able to identify that the data is highly imbalanced. The majority class is healthy loans `0`, with a total of 75,036 loans, where the minority class is the high-risk loans `1`, with a total of 2,500 loans.
+When analyzing the `value_counts` after splitting the original data into training and testing sets, we are able to identify that the data is highly imbalanced. The majority class is healthy loans `0`, with a total of 75,036 loans, where the minority class is the high-risk loans `1`, with a total of 2,500 loans. 
+
+![orig_data_value_counts](Images/orig_data_value_counts.png)  
+
+
+When analyzing the `value_counts` after splitting the resampled data into training and testing sets, we are able to identify that the data is balanced. There are equal healthy `0` and high-risk loans `1`, with a total of 56,721 loans each.
+
+![resampled_data_value_counts](Images/resampled_data_value_counts.png)  
 
 
 
@@ -51,6 +58,9 @@ The most appropriate tool for the machine learning model is the Logistic Regress
   * Confusion Matrix:
       * 56 False Positives: Actual value is healthy and predicted value is high-risk
       * 102 False Negatives: Actual value is high-risk and predicted value is healthy
+
+![orig_data_confusion_matrix](Images/orig_data_confusion_matrix.png)  
+
   * Balanced accuracy score of 95%.
   * Healthy loan status:
       * Precision: 100%
@@ -60,10 +70,15 @@ The most appropriate tool for the machine learning model is the Logistic Regress
       * Recall: 91%
 
 
+
+
 **Machine Learning Model 2 - Logistic Regression Model Fitted with Resampled Training Data:**
   * Confusion Matrix:
       * 4 False Positives: Actual value is healthy and predicted value is high-risk
       * 116 False Negatives: Actual value is high-risk and predicted value is healthy
+
+![resampled_data_confusion_matrix](Images/resampled_data_confusion_matrix.png)  
+
   * Balanced accuracy score of 99%.
   * Healthy loan status:
       * Precision: 100%
@@ -72,6 +87,7 @@ The most appropriate tool for the machine learning model is the Logistic Regress
       * Precision: 84%
       * Recall: 99%
 
+![resampled_data_classification_report](Images/resampled_data_classification_report.png)  
 
 
 ## Summary
